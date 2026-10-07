@@ -1,0 +1,144 @@
+<!DOCTYPE html><html lang="hi" data-theme="galaxy"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><title>Nobel Physics 2026 · Francis Halzen & IceCube — Visual Notes</title>
+<style>
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}*{box-sizing:border-box}
+[data-theme=galaxy]{--b1:#0b0720;--b2:#1d1457;--fg:#f0eeff;--mu:#b9b2e6;--cd:rgba(20,14,60,.74);--ac:#a78bfa;--a2:#60a5fa;--bd:rgba(167,139,250,.4)}
+[data-theme=blackhole]{--b1:#030303;--b2:#1a0d03;--fg:#fff3e6;--mu:#e0b98f;--cd:rgba(15,8,2,.78);--ac:#ff9a3c;--a2:#ffe9c2;--bd:rgba(255,154,60,.45)}
+[data-theme=supernova]{--b1:#1a0300;--b2:#4a1200;--fg:#fff0e0;--mu:#ffc9a0;--cd:rgba(40,8,0,.76);--ac:#ff6a2b;--a2:#ffd23f;--bd:rgba(255,106,43,.5)}
+[data-theme=aurora]{--b1:#021616;--b2:#053a36;--fg:#e8fff8;--mu:#9fe8d2;--cd:rgba(2,30,28,.76);--ac:#34f5a5;--a2:#2dd4bf;--bd:rgba(52,245,165,.4)}
+[data-theme=cyber]{--b1:#0a0014;--b2:#1c0238;--fg:#f7ecff;--mu:#d6a8f0;--cd:rgba(14,0,30,.8);--ac:#ff2bd6;--a2:#00f0ff;--bd:rgba(0,240,255,.5)}
+[data-theme=ocean]{--b1:#00101c;--b2:#003458;--fg:#e6f6ff;--mu:#9fd3ee;--cd:rgba(0,22,40,.76);--ac:#38bdf8;--a2:#5eead4;--bd:rgba(94,234,212,.4)}
+[data-theme=sunset]{--b1:#3a0f4d;--b2:#e8603f;--fg:#fff;--mu:#ffd9e6;--cd:rgba(45,10,62,.8);--ac:#ffb86b;--a2:#ff7eb6;--bd:rgba(255,184,107,.5)}
+[data-theme=paper]{--b1:#fbfaf6;--b2:#eceae1;--fg:#1c1b22;--mu:#55525e;--cd:rgba(255,255,255,.92);--ac:#4338ca;--a2:#0e7490;--bd:rgba(0,0,0,.14)}
+body{margin:0;color:var(--fg);background:var(--b1) linear-gradient(160deg,var(--b1),var(--b2)) fixed;font:16px/1.65 "Trebuchet MS",system-ui,sans-serif}
+#bg{position:fixed;inset:0;width:100%;height:100%;z-index:0}
+.bar,main{position:relative;z-index:1}
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;display:flex;gap:8px;overflow-x:auto;padding:10px 12px;background:var(--cd);backdrop-filter:blur(8px);border-bottom:1px solid var(--bd)}
+.bar button{flex:none;border:1px solid var(--bd);background:transparent;color:var(--fg);padding:7px 13px;border-radius:99px;font:inherit;font-size:14px;cursor:pointer}
+.bar button.on{background:var(--ac);color:#111;border-color:var(--ac);font-weight:700}
+main{max-width:860px;margin:0 auto;padding:12px 14px 60px}
+.card{background:var(--cd);border:1px solid var(--bd);border-radius:20px;padding:20px;margin:18px 0;backdrop-filter:blur(7px)}
+h1{font:800 clamp(30px,7vw,52px)/1.1 Georgia,serif;margin:6px 0}h2{font:700 24px/1.25 Georgia,serif;margin:0 0 6px;color:var(--ac)}
+p{margin:8px 0}.mu{color:var(--mu)}.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.chip{border:1px solid var(--bd);border-radius:12px;padding:6px 11px;font-size:14px}
+.big{font-size:clamp(22px,5vw,32px);color:var(--a2);font-weight:700}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;margin-top:12px}
+.mini{border:1px solid var(--bd);border-radius:14px;padding:12px}.mini b{display:block;font-size:26px}
+.st b{font-size:30px;color:var(--a2)}
+svg,canvas.sim{width:100%;height:auto;display:block}svg text{fill:var(--fg);font-size:13px}
+canvas.sim{border:1px dashed var(--bd);border-radius:12px}
+button.act{background:var(--ac);color:#111;border:0;border-radius:12px;padding:9px 16px;font:700 15px inherit;cursor:pointer;margin:8px 8px 0 0}
+button.act:focus-visible,.bar button:focus-visible,a:focus-visible{outline:3px solid var(--a2);outline-offset:2px}
+.tl{display:flex;gap:12px;overflow-x:auto;padding:10px 2px;border-top:3px solid var(--ac);margin-top:14px}
+.tl div{flex:none;width:170px;border:1px solid var(--bd);border-radius:12px;padding:10px;position:relative;margin-top:8px}
+.tl div:before{content:"";position:absolute;top:-17px;left:14px;width:12px;height:12px;border-radius:50%;background:var(--a2)}
+.tl b{color:var(--a2)}
+.news{display:block;padding:12px;margin-top:10px;border:1px solid var(--bd);border-radius:14px;color:var(--fg);text-decoration:none}
+.news:hover{border-color:var(--ac)}.news b{color:var(--ac);display:block}
+details{border:1px solid var(--bd);border-radius:12px;padding:8px 12px;margin-top:8px}summary{cursor:pointer;font-weight:700}
+.flow{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:10px}.flow span{border:1px solid var(--bd);border-radius:12px;padding:8px 11px;font-size:14px}.flow i{color:var(--ac)}
+@media(prefers-reduced-motion:reduce){*{animation:none!important}}
+</style></head><body>
+<canvas id="bg"></canvas>
+<nav class="bar" id="th" aria-label="Theme"></nav>
+<main>
+<section class="card"><p class="mu">🏆 Nobel Prize in Physics 2026 · 6 Oct 2026 · Stockholm</p>
+<h1>Francis Halzen</h1>
+<p class="big">“Bhoot-kano” (neutrinos) ko Antarctica ki barf se pakadne wala insaan</p>
+<p>Award kis liye: <b>IceCube Neutrino Observatory me decisive contributions aur astrophysical origin ke high-energy neutrinos ki discovery</b>.</p>
+<div class="chips"><span class="chip">🇧🇪 Janm: Tienen, Belgium (1944)</span><span class="chip">🎓 PhD: KU Leuven (1969)</span><span class="chip">🏫 Prof., Univ. of Wisconsin–Madison</span><span class="chip">🎂 Umar: 82</span><span class="chip">🥇 Akele winner (rare!)</span></div>
+<p class="mu">Is page ko upar se neeche ek-ek step padho. Har section me khud chalane wali simulation hai.</p></section>
+
+<section class="card"><h2>Step 1 · Neutrino kya hota hai?</h2>
+<p>Neutrino ek <b>bahut chhota, bahut halka</b> particle hai. Na charge, na takrane ki aadat. Isliye wo deewar, pahaad, poori Dharti ke aar-paar nikal jaata hai. Har second lagbhag <b>100 trillion</b> neutrinos (zyadatar Sooraj se) tumhari body se guzar jaate hain — tumhe pata bhi nahi chalta.</p>
+<canvas class="sim" id="gh" width="640" height="200"></canvas>
+<div class="chips"><span class="chip">🟡 Roshni: <b id="c1">0</b> deewar par ruki</span><span class="chip">🔵 Neutrino: <b id="c2">0</b> aar-paar nikle</span></div>
+<button class="act" id="gp">⏸ Pause / ▶ Play</button>
+<p class="mu">Seekh: Neutrino = hawa jo deewar ke aar-paar. Isi wajah se pakadna bahut mushkil hai.</p></section>
+
+<section class="card"><h2>Step 2 · IceCube ka jugaad</h2>
+<p>Neutrino ko seedha dekh nahi sakte. Isliye South Pole ki <b>1 km³ barf</b> ke andar hazaron sensors dabaye gaye. Kabhi-kabhi ek neutrino barf ke atom se takra jaata hai aur ek <b>muon</b> banata hai. Ye muon barf me roshni se tez chalta hai, to <b>neela Cherenkov prakash</b> nikalta hai (roshni ka “sonic boom”).</p>
+<div class="grid st"><div class="mini"><b data-n="1">0</b>km³ barf</div><div class="mini"><b data-n="86">0</b>strings (tar)</div><div class="mini"><b data-n="5160">0</b>sensors (~)</div><div class="mini"><b>1.45–2.45 km</b>gehrai</div></div>
+<svg id="ice" viewBox="0 0 640 400" role="img" aria-label="IceCube simulation"></svg>
+<button class="act" id="shoot">❄️ Neutrino bhejo</button> <span class="chip">Sensors jo chamke: <b id="cn">0</b> / 66 (demo)</span>
+<p class="mu">Dashed line = neutrino ka raasta (invisible). Takraane ke <b>baad</b> hi neela track banta hai aur nazdeeki sensors chamakte hain. Computer chamakne ke time se direction nikalta hai.</p>
+<div class="flow"><span>1 Neutrino aata hai</span><i>➜</i><span>2 Barf se takrata hai</span><i>➜</i><span>3 Muon + neela prakash</span><i>➜</i><span>4 Sensors timing note karte hain</span><i>➜</i><span>5 Direction = source ka pata</span></div></section>
+
+<section class="card"><h2>Step 3 · Neutrino aate kahan se hain?</h2>
+<p>Brahmand ke sabse hinsak jagah: black hole ke paas wali galaxies, supernova, blazars. Wahan se neutrino seedha nikalta hai, Dharti ko cheerta hai aur barf me pakda jaata hai.</p>
+<svg viewBox="0 0 640 200" role="img" aria-label="Neutrino sources to IceCube">
+<g font-size="30"><text x="30" y="52">⭐</text><text x="30" y="112">💥</text><text x="30" y="172">🌀</text><text x="372" y="112" font-size="60">🌍</text><text x="560" y="112" font-size="40">🧊</text></g>
+<g style="fill:var(--a2)"><circle r="5"><animateMotion dur="3s" repeatCount="indefinite" path="M70 40 L580 100"/></circle><circle r="5"><animateMotion dur="3.4s" repeatCount="indefinite" path="M70 100 L580 100"/></circle><circle r="5"><animateMotion dur="3.8s" repeatCount="indefinite" path="M70 160 L580 100"/></circle></g>
+<text x="20" y="196">Source (tara, blazar, galaxy)</text><text x="360" y="196">Dharti ke aar-paar</text><text x="540" y="196">IceCube</text></svg></section>
+
+<section class="card"><h2>Step 4 · Ye “nayi khagol vigyan” kyun?</h2>
+<p>Pehle hum brahmand sirf roshni se dekhte the. Neutrino ek <b>naya khidki</b> hai. Dekho baaki raaste kyun kamzor hain:</p>
+<svg viewBox="0 0 640 230" role="img" aria-label="Cosmic rays vs light vs neutrinos">
+<g font-size="24"><text x="10" y="48">⭐</text><text x="10" y="123">⭐</text><text x="10" y="198">⭐</text><text x="318" y="128">☁️</text><text x="605" y="48">🌍</text><text x="605" y="123">🌍</text><text x="605" y="198">🌍</text></g>
+<path d="M45 40 q25 -35 50 0 t50 0 t50 0 t50 0 t50 0 t50 0 t50 0 t50 0 t50 0 t50 0 t50 0" fill="none" style="stroke:#ff9a3c" stroke-width="2" opacity=".6"/>
+<path d="M45 115 L300 115" style="stroke:#fbbf24" stroke-width="2" fill="none" opacity=".6"/><path d="M45 190 L600 190" style="stroke:#22d3ee" stroke-width="2" fill="none" opacity=".7"/>
+<circle r="5" fill="#ff9a3c"><animateMotion dur="5s" repeatCount="indefinite" path="M45 40 q25 -35 50 0 t50 0 t50 0 t50 0 t50 0 t50 0 t50 0 t50 0 t50 0 t50 0 t50 0"/></circle>
+<circle r="5" fill="#fbbf24"><animateMotion dur="2.5s" repeatCount="indefinite" path="M45 115 L300 115"/></circle>
+<circle r="5" fill="#22d3ee"><animateMotion dur="4s" repeatCount="indefinite" path="M45 190 L600 190"/></circle>
+<text x="45" y="12">Cosmic rays: magnetic field me bhatakte hain ➜ source ka pata nahi</text><text x="45" y="85">Roshni: dhool/badal me ruk jaati hai</text><text x="45" y="226">Neutrino: seedha chalta hai ➜ asli source ka seedha suraag ✔</text></svg>
+<p class="mu">Isko <b>multi-messenger astronomy</b> kehte hain: roshni + neutrino + gravitational waves milakar ek hi cheez ko dekhna.</p></section>
+
+<section class="card"><h2>Step 5 · Safar: IceCube ki kahani</h2><div class="tl">
+<div><b>2010</b><br>IceCube poora bana (South Pole)</div><div><b>2013</b><br>Brahmand se aaye high-energy neutrinos ka pehla saboot</div><div><b>2017</b><br>Ek blazar (TXS 0506+056) ko neutrino source ke roop me jodha gaya</div><div><b>2022–23</b><br>Galaxy NGC 1068 aur hamari Milky Way se neutrinos ki map</div><div><b>6 Oct 2026</b><br>🏆 Halzen ko Nobel</div></div>
+<p class="mu">Dates simple revision ke liye hain; detail ke liye neeche ke links dekho.</p></section>
+
+<section class="card"><h2>⚡ 30-second quick revision</h2><div class="grid">
+<div class="mini"><b>🏆</b>Winner: Francis Halzen</div><div class="mini"><b>👻</b>Neutrino = bhoot jaisa particle</div><div class="mini"><b>🧊</b>IceCube = 1 km³ barf + sensors</div><div class="mini"><b>🔵</b>Neela Cherenkov prakash pakda jaata hai</div><div class="mini"><b>🔭</b>Naya khagol vigyan (neutrino astronomy)</div><div class="mini"><b>1️⃣</b>Akela winner — kaafi dino baad</div></div>
+<details><summary>📖 Mini glossary</summary><p><b>Neutrino:</b> bahut halka, bina charge ka particle.<br><b>Muon:</b> electron ka bhaari bhai; neutrino takrane par banta hai.<br><b>Cherenkov light:</b> medium me roshni se tez particle ka neela chamak.<br><b>DOM:</b> IceCube ka roshni-sensor module.<br><b>Blazar:</b> black hole wali galaxy jo apna jet hamari taraf phenkti hai.<br><b>Astrophysical:</b> brahmand ke baahar se aaya (Dharti ke vayumandal se nahi).</p></details></section>
+
+<section class="card"><h2>📰 Sources / News links</h2><p class="mu">Alag-alag jagah ki original khabar. Khud kholke padho.</p>
+<a class="news" target="_blank" rel="noopener" href="https://www.cnn.com/2026/10/06/science/nobel-prize-physics-francis-halzen-winner-intl"><b>CNN</b>Halzen ko prize; committee chair ne unki lagan aur vision ko naye khagol vigyan ka rasta kholne wala bataya.</a>
+<a class="news" target="_blank" rel="noopener" href="https://www.aljazeera.com/news/2026/10/6/francis-halzen-wins-nobel-prize-in-physics-for-work-on-ghost-particles"><b>Al Jazeera</b>Antarctica ke detector aur “ghost particles” par simple report, Halzen ka reaction bhi.</a>
+<a class="news" target="_blank" rel="noopener" href="https://www.aip.org/aip/aip-congratulates-2026-nobel-prize-winner-in-physics"><b>AIP (American Institute of Physics)</b>Official citation ke shabd aur Halzen ki biography.</a>
+<a class="news" target="_blank" rel="noopener" href="https://www.forbes.com/sites/michaeltnietzel/2026/10/06/university-of-wisconsin-professor-wins-the-2026-nobel-prize-in-physics/"><b>Forbes</b>University of Wisconsin angle; physics prize ab tak 120 baar, 231 winners ko mila.</a>
+<a class="news" target="_blank" rel="noopener" href="https://www.britannica.com/topic/2026-Nobel-Prize-winners"><b>Britannica</b>2026 ke saare Nobel winners ek jagah (Medicine me Deisseroth, Hegemann, Nagel).</a>
+<a class="news" target="_blank" rel="noopener" href="https://vajiramandravi.com/current-affairs/nobel-prize-2026/"><b>Vajiram &amp; Ravi</b>Exam-style current affairs summary, poori Nobel week ka list.</a>
+<a class="news" target="_blank" rel="noopener" href="https://www.nobelprize.org/prizes/physics/all-nobel-prizes-in-physics/"><b>NobelPrize.org</b>Official: physics ke sabhi purane winners aur citations.</a>
+<a class="news" target="_blank" rel="noopener" href="https://icecube.wisc.edu/"><b>IceCube official site</b>Project ki asli jaankari (research team ki taraf se).</a>
+<p class="mu">Note: simulations samjhane ke liye simple banaye gaye hain, asli scale/physics ka exact model nahi.</p></section>
+</main>
+<script>
+const TH=[['galaxy','🌌 Galaxy'],['blackhole','🕳️ Black Hole'],['supernova','💥 Supernova'],['aurora','🌿 Aurora'],['cyber','🌆 Cyberpunk'],['ocean','🌊 Deep Ocean'],['sunset','🌅 Sunset'],['paper','📄 Paper']];
+let T='galaxy';try{const s=localStorage.getItem('th');if(TH.some(x=>x[0]==s))T=s}catch(e){}
+const cv=document.getElementById('bg'),c=cv.getContext('2d');let W,H,P=[],t=0;
+function init(){W=cv.width=innerWidth;H=cv.height=innerHeight;P=[];const n={galaxy:150,blackhole:300,supernova:170,ocean:55,sunset:35,paper:45}[T]||0;for(let i=0;i<n;i++)P.push({x:Math.random()*W,y:Math.random()*H,r:Math.random(),a:Math.random()*6.283,d:30+Math.random()*Math.min(W,H)*.55,s:.3+Math.random()})}
+const D={
+galaxy(){const g=c.createRadialGradient(W*.7,H*.3,0,W*.7,H*.3,W*.5);g.addColorStop(0,'rgba(139,92,246,.25)');g.addColorStop(1,'rgba(0,0,0,0)');c.fillStyle=g;c.fillRect(0,0,W,H);c.fillStyle='#fff';P.forEach(p=>{c.globalAlpha=.3+.7*Math.abs(Math.sin(t*.02*p.s+p.a));c.fillRect(p.x,p.y,p.r*2+.6,p.r*2+.6)});c.globalAlpha=1},
+blackhole(){const cx=W*.5,cy=H*.45,m=Math.min(W,H)*.6;P.forEach(p=>{p.a+=.012*p.s*(200/p.d+.3);const k=Math.max(0,1-p.d/m);c.fillStyle=`hsl(${25+k*30},100%,${55+k*40}%)`;c.globalAlpha=.35+.55*k;c.fillRect(cx+Math.cos(p.a)*p.d*1.3,cy+Math.sin(p.a)*p.d*.32,p.r*2+1,p.r*2+1)});c.globalAlpha=1;const g=c.createRadialGradient(cx,cy,10,cx,cy,95);g.addColorStop(0,'#000');g.addColorStop(.35,'#000');g.addColorStop(.5,'rgba(255,170,70,.55)');g.addColorStop(1,'rgba(0,0,0,0)');c.fillStyle=g;c.beginPath();c.arc(cx,cy,95,0,6.3);c.fill()},
+supernova(){const cx=W/2,cy=H/2,m=Math.max(W,H)*.6;const g=c.createRadialGradient(cx,cy,0,cx,cy,90+10*Math.sin(t*.05));g.addColorStop(0,'rgba(255,240,170,.8)');g.addColorStop(1,'rgba(255,80,0,0)');c.fillStyle=g;c.fillRect(0,0,W,H);P.forEach(p=>{p.d+=p.s*1.6;if(p.d>m)p.d=0;const k=p.d/m;c.fillStyle=`hsl(${55-k*50},100%,${60-k*10}%)`;c.globalAlpha=1-k;c.beginPath();c.arc(cx+Math.cos(p.a)*p.d,cy+Math.sin(p.a)*p.d,p.r*3+1,0,6.3);c.fill()});c.globalAlpha=1},
+aurora(){['rgba(52,245,165,.17)','rgba(45,212,191,.14)','rgba(120,160,255,.1)'].forEach((col,k)=>{c.strokeStyle=col;c.lineWidth=70;c.beginPath();for(let x=0;x<=W;x+=20){const y=H*(.25+k*.1)+Math.sin(x*.003+t*.008*(k+1))*60+Math.sin(x*.009+t*.004)*25;x?c.lineTo(x,y):c.moveTo(x,y)}c.stroke()})},
+cyber(){const h=H*.55,f=(t*.006)%1;c.lineWidth=1;for(let i=0;i<14;i++){const k=(i+f)/14,y=h+k*k*(H-h);c.strokeStyle=`rgba(255,43,214,${.15+k*.5})`;c.beginPath();c.moveTo(0,y);c.lineTo(W,y);c.stroke()}c.strokeStyle='rgba(0,240,255,.35)';for(let j=-12;j<=12;j++){c.beginPath();c.moveTo(W/2+j*18,h);c.lineTo(W/2+j*W/9,H);c.stroke()}const g=c.createLinearGradient(0,h-80,0,h);g.addColorStop(0,'rgba(255,43,214,0)');g.addColorStop(1,'rgba(255,43,214,.35)');c.fillStyle=g;c.fillRect(0,h-80,W,80)},
+ocean(){c.shadowColor='#5eead4';c.shadowBlur=10;c.strokeStyle='rgba(94,234,212,.55)';P.forEach(p=>{p.y-=p.s*.8;p.x+=Math.sin(t*.02+p.a)*.4;if(p.y<-10){p.y=H+10;p.x=Math.random()*W}c.beginPath();c.arc(p.x,p.y,p.r*7+2,0,6.3);c.stroke()});c.shadowBlur=0},
+sunset(){const cx=W/2,cy=H*.62,r=Math.min(W,H)*.2,g=c.createLinearGradient(0,cy-r,0,cy+r);g.addColorStop(0,'#ffd36b');g.addColorStop(1,'#ff4f9a');c.fillStyle=g;c.beginPath();c.arc(cx,cy,r,0,6.3);c.fill();c.fillStyle='rgba(60,10,70,.9)';for(let i=0;i<6;i++)c.fillRect(cx-r,cy+i*r/5+Math.sin(t*.03)*2,2*r,2+i*1.5);c.fillStyle='rgba(255,255,255,.4)';P.forEach(p=>{p.x+=p.s*.3;if(p.x>W)p.x=-20;c.fillRect(p.x,p.y*.6,p.r*2+1,p.r*2+1)})},
+paper(){c.fillStyle='rgba(79,70,229,.12)';P.forEach(p=>{p.y-=p.s*.15;if(p.y<-5)p.y=H+5;c.beginPath();c.arc(p.x,p.y,p.r*12+3,0,6.3);c.fill()})}};
+const bar=document.getElementById('th');
+TH.forEach(([k,l])=>{const b=document.createElement('button');b.textContent=l;b.dataset.k=k;b.onclick=()=>setT(k);bar.appendChild(b)});
+function setT(k){T=k;document.documentElement.dataset.theme=k;bar.querySelectorAll('button').forEach(b=>b.classList.toggle('on',b.dataset.k==k));init();try{localStorage.setItem('th',k)}catch(e){}}
+// Ghost sim
+const gc=document.getElementById('gh').getContext('2d'),gp=[];let stp=0,pass=0,run=true,fr=0;
+document.getElementById('gp').onclick=()=>run=!run;
+function ghost(){if(!run)return;fr++;if(fr%16==0){gp.push({x:0,y:25+Math.random()*60,n:0,v:2+Math.random()*1.5});gp.push({x:0,y:115+Math.random()*60,n:1,v:2+Math.random()*1.5})}
+gc.clearRect(0,0,640,200);gc.fillStyle='#78716c';gc.fillRect(290,0,60,200);gc.fillStyle='#fff';gc.font='13px sans-serif';gc.fillText('DEEWAR',293,105);
+for(let i=gp.length-1;i>=0;i--){const p=gp[i];if(p.dead){p.fl--;if(p.fl<0){gp.splice(i,1);continue}gc.fillStyle='#f59e0b';gc.fillText('✸',282,p.y+5);continue}
+p.x+=p.v;if(!p.n&&p.x>=285){p.dead=1;p.fl=12;stp++;continue}if(p.n&&!p.c&&p.x>350){p.c=1;pass++}if(p.x>640){gp.splice(i,1);continue}
+gc.globalAlpha=p.n?.7:1;gc.fillStyle=p.n?'#22d3ee':'#f59e0b';gc.beginPath();gc.arc(p.x,p.y,p.n?4:6,0,6.3);gc.fill();gc.globalAlpha=1}
+c1.textContent=stp;c2.textContent=pass}
+// IceCube sim
+const S=document.getElementById('ice'),NS='http://www.w3.org/2000/svg';
+const el=(n,a)=>{const e=document.createElementNS(NS,n);for(const k in a)e.setAttribute(k,a[k]);S.appendChild(e);return e};
+el('rect',{x:0,y:40,width:640,height:360,fill:'rgba(125,211,252,.13)'});el('line',{x1:0,x2:640,y1:40,y2:40,stroke:'#7dd3fc','stroke-width':2});
+const tx=(x,y,s)=>{const e=el('text',{x,y});e.textContent=s};tx(8,28,'❄️ Barf ki sataha (South Pole)');tx(8,392,'⬆ Neutrino Dharti ke neeche se aata hua');
+const A=[40,372],B=[610,60],IP=.38,L2=(B[0]-A[0])**2+(B[1]-A[1])**2,X=p=>A[0]+p*(B[0]-A[0]),Y=p=>A[1]+p*(B[1]-A[1]);
+el('line',{x1:X(0),y1:Y(0),x2:X(IP),y2:Y(IP),stroke:'#22d3ee','stroke-dasharray':'3 6','stroke-width':2,opacity:.55});
+const DM=[];[100,190,280,370,460,550].forEach(x=>{el('line',{x1:x,x2:x,y1:50,y2:385,style:'stroke:var(--mu)',opacity:.5});for(let y=110;y<=380;y+=27){const d=el('circle',{cx:x,cy:y,r:4,style:'fill:var(--mu)'}),tp=((x-A[0])*(B[0]-A[0])+(y-A[1])*(B[1]-A[1]))/L2;DM.push({d,tp,ds:Math.hypot(x-X(tp),y-Y(tp))})}});
+const trk=el('line',{stroke:'#38bdf8','stroke-width':5,'stroke-linecap':'round',opacity:0,style:'filter:drop-shadow(0 0 6px #38bdf8)'}),boom=el('circle',{cx:X(IP),cy:Y(IP),r:12,fill:'none',stroke:'#f59e0b','stroke-width':3,opacity:0}),dot=el('circle',{r:6,fill:'#22d3ee',opacity:0});
+let busy=0;document.getElementById('shoot').onclick=()=>{if(busy)return;busy=1;DM.forEach(o=>{o.d.setAttribute('r',4);o.d.style.fill='var(--mu)';o.on=0});trk.setAttribute('opacity',0);boom.setAttribute('opacity',0);let n=0;const t0=performance.now();(function f(now){const p=Math.min((now-t0)/3500,1);dot.setAttribute('cx',X(p));dot.setAttribute('cy',Y(p));dot.setAttribute('opacity',1);if(p>IP){boom.setAttribute('opacity',1);trk.setAttribute('opacity',1);trk.setAttribute('x1',X(IP));trk.setAttribute('y1',Y(IP));trk.setAttribute('x2',X(p));trk.setAttribute('y2',Y(p))}DM.forEach(o=>{if(!o.on&&o.ds<40&&o.tp>IP&&o.tp<=p){o.on=1;n++;o.d.setAttribute('r',9);o.d.style.fill='#67e8f9'}});cn.textContent=n;if(p<1)requestAnimationFrame(f);else{dot.setAttribute('opacity',0);busy=0}})(t0)};
+document.querySelectorAll('[data-n]').forEach(e=>{const n=+e.dataset.n;let i=0;const q=setInterval(()=>{i+=n/40;e.textContent=Math.round(Math.min(i,n)).toLocaleString('en-IN');if(i>=n)clearInterval(q)},30)});
+addEventListener('resize',init);setT(T);
+(function L(){try{t++;c.clearRect(0,0,W,H);D[T]&&D[T]()}catch(e){}try{ghost()}catch(e){}requestAnimationFrame(L)})();
+</script></body></html>
